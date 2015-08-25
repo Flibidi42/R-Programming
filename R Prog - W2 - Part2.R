@@ -11,8 +11,8 @@ complete <- function(directory, id = 1:332) {
       fichier <- paste("../", directory, "/", k, ".csv", sep = "")
     my_data <- read.csv(file = fichier)
     vecteur_compte <- c(vecteur_compte, length(my_data$ID[!is.na(my_data$sulfate)&!is.na(my_data$nitrate)]))
-  }
+  } 
   sortie <- data.frame(vecteur_id, vecteur_compte)
-  colnames(sortie) <- c("ID", "Nb lignes")
+  colnames(sortie) <- c("ID", "Nblignes")
   sortie
 }
