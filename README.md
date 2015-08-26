@@ -9,3 +9,5 @@ Donner correlation sulfate - nitrate
 ##Week 4
 ###Partie 1
 Determiner le meilleur hopital
+###Partie 2 (en cours)
+Classer les hopitaux
