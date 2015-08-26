@@ -16,16 +16,11 @@ rankhospital <- function(state, outcome, num = "best") {
   colone <- paste("Hospital.30.Day.Death..Mortality..Rates.from.", outcome, sep="")
   my_data <- my_data[my_data$State == state,] # Selection de l'état
   my_data <- my_data[(my_data[,colone]) != "Not Available",]
-  v <- as.numeric(my_data[,colone])# Extraction des taux
-  w <- sort(v)
+  my_data <- my_data[order(as.numeric(my_data[,colone]), my_data$Hospital.Name), ]
   if(num == "best"||num<=0)
-    valeur <- w[1]
-  else if(num == "worst" || num > length(w))
-    valeur <- w[length(w)]
-  else
-    valeur <- w[num]
-  nom <- my_data$Hospital.Name[v == valeur]
-  nom <- sort(nom)
-  nom[1]
+    num <- 1
+  else if(num == "worst")
+    num <- length(my_data$Hospital.Name)
+  my_data[num, "Hospital.Name"]
   ## Return hospital name in that state with the given rank 30-day death rate
 }
