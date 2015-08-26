@@ -10,4 +10,6 @@ Donner correlation sulfate - nitrate
 ###Partie 1
 Determiner le meilleur hopital
 ###Partie 2
-Classer les hopitaux
+Classer un hopital
+###Partie 3
+Classer tous les hopitaux
