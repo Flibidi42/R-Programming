@@ -1,5 +1,4 @@
 rankhospital <- function(state, outcome, num = "best") {
-  valeur_rank <- 0
   ## Read outcome data
   ## Check that state and outcome are valid
   my_data <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
